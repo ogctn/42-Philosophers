@@ -6,7 +6,7 @@
 /*   By: ogcetin <ogcetin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 10:30:58 by ogcetin           #+#    #+#             */
-/*   Updated: 2023/10/23 11:56:53 by ogcetin          ###   ########.fr       */
+/*   Updated: 2023/10/23 12:51:58 by ogcetin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ void	take_fork(t_philo *philo)
 	print_stat(philo, TAKE_FORK);
 }
 
-// print_stat(philo, EAT); 1. satıra çekilebilir
 void	eat(t_philo *philo)
 {
 	pthread_mutex_lock(&philo->info->m_eat);
@@ -57,6 +56,10 @@ void	eat(t_philo *philo)
 	ft_sleep_ms(philo->info->t_eat);
 	pthread_mutex_unlock(&(philo->fork_l));
 	pthread_mutex_unlock(philo->fork_r);
+}
+
+void	philo_sleep(t_philo *philo)
+{
 	print_stat(philo, SLEEP);
 	ft_sleep_ms(philo->info->t_sleep);
 	print_stat(philo, THINK);
@@ -87,6 +90,7 @@ void	*philo_life(void *a_philo)
 			pthread_mutex_unlock(&philo->info->m_stop);
 			return (0);
 		}
+		philo_sleep(philo);
 	}
 	return (0);
 }

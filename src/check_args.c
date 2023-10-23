@@ -6,7 +6,7 @@
 /*   By: ogcetin <ogcetin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 20:25:06 by ogcetin           #+#    #+#             */
-/*   Updated: 2023/10/23 02:54:09 by ogcetin          ###   ########.fr       */
+/*   Updated: 2023/10/23 12:36:34 by ogcetin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ static int	is_all_positive(char **av)
 
 int	check_args(int ac, char **av)
 {
-	printf("ac: %d son: %s is_o_d: %d\n", ac, av[4], is_only_digits(av[4]));
 	if (ac < 5)
 		return (usage(few_arguments), 1);
 	if (ac > 6)
