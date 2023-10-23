@@ -6,7 +6,7 @@
 /*   By: ogcetin <ogcetin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 21:55:01 by ogcetin           #+#    #+#             */
-/*   Updated: 2023/10/23 12:45:58 by ogcetin          ###   ########.fr       */
+/*   Updated: 2023/10/23 17:53:36 by ogcetin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef enum e_errors
 {
 	few_arguments,
 	many_arguments,
+	philo_number,
 	die_is_not_number,
 	eat_is_not_number,
 	sleep_is_not_number,
@@ -37,6 +38,7 @@ typedef enum e_errors
 # define ERR_TOO_FEW "Too few arguments!"
 # define ERR_TOO_MANY "Too many arguments!"
 # define ERR_NEGATIVE "All arguments must be positive!"
+# define ERR_NO_OF_PH "Check {number_of_philos}, parameter is not a number!"
 # define ERR_DIE "Check {time_to_die}, parameter is not a number!"
 # define ERR_EAT "Check {time_to_eat}, parameter is not a number!"
 # define ERR_SLEEP "Check {time_to_sleep}, parameter is not a number!"
@@ -48,4 +50,5 @@ typedef enum e_errors
 # define ERR_U3 "./philo 5 300 100 100    ->(max_number_of_eat is not given)\n"
 # define ERR_U4 "./philo 5 300 100 100 7  ->(max_number_of_eat is given)\n"
 # define ERR_THREAD "Threading error!"
+
 #endif

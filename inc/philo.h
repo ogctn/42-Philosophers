@@ -6,7 +6,7 @@
 /*   By: ogcetin <ogcetin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:09:11 by ogcetin           #+#    #+#             */
-/*   Updated: 2023/10/23 11:54:13 by ogcetin          ###   ########.fr       */
+/*   Updated: 2023/10/23 17:55:10 by ogcetin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,11 @@ typedef struct s_info
 	int				stop;
 	long int		t_start;
 	t_philo			*philo;
-	pthread_mutex_t	print;
+	pthread_mutex_t	m_print;
 	pthread_mutex_t	m_stop;
 	pthread_mutex_t	m_eat;
-	pthread_mutex_t	dead;
+	pthread_mutex_t	m_dead;
+	pthread_mutex_t	m_set_check;
 }		t_info;
 
 int			ft_atoi_positive(char *str);

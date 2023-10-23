@@ -1,6 +1,6 @@
 NAME	:= philo
 CC		:= gcc
-CCFLAGS :=  -pthread #-Wall -Werror -Wextra -g -fsanitize=thread
+CCFLAGS := -Wall -Werror -Wextra -pthread
 RM		:= rm -rf
 
 SRC_DIR	:= src

@@ -6,7 +6,7 @@
 /*   By: ogcetin <ogcetin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:12:37 by ogcetin           #+#    #+#             */
-/*   Updated: 2023/10/23 11:52:41 by ogcetin          ###   ########.fr       */
+/*   Updated: 2023/10/23 18:10:24 by ogcetin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ void	before_exit(t_info *info)
 		pthread_mutex_destroy(info->philo[i].fork_r);
 		i++;
 	}
-	pthread_mutex_destroy(&info->print);
+	pthread_mutex_destroy(&info->m_print);
 	pthread_mutex_destroy(&info->m_stop);
 	pthread_mutex_destroy(&info->m_eat);
-	pthread_mutex_destroy(&info->dead);
+	pthread_mutex_destroy(&info->m_dead);
 	free(info->philo);
 }
 
