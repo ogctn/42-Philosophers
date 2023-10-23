@@ -6,7 +6,10 @@ RM		:= rm -rf
 SRC_DIR	:= src
 SRCS =	$(SRC_DIR)/philo.c \
 		$(SRC_DIR)/check_args.c \
-		$(SRC_DIR)/libft.c
+		$(SRC_DIR)/libft.c \
+		$(SRC_DIR)/init.c \
+		$(SRC_DIR)/utils.c \
+		$(SRC_DIR)/philo_life.c
 
 OBJ_DIR := obj
 OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)

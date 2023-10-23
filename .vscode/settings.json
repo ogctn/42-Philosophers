@@ -2,6 +2,12 @@
 	"files.associations": {
 		"__locale": "c",
 		"stdio.h": "c",
-		"errordefs.h": "c"
+		"errordefs.h": "c",
+		"stddef.h": "c",
+		"stdlib.h": "c",
+		"stdbool.h": "c",
+		"__config": "c",
+		"time.h": "c",
+		"philo.h": "c"
 	}
 }

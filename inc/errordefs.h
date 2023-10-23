@@ -6,18 +6,21 @@
 /*   By: ogcetin <ogcetin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 21:55:01 by ogcetin           #+#    #+#             */
-/*   Updated: 2023/10/23 03:00:36 by ogcetin          ###   ########.fr       */
+/*   Updated: 2023/10/23 11:38:14 by ogcetin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ERRORDEFS_H
 # define ERRORDEFS_H
 
-# define TAKE_FORK "has taken a fork"
-# define THINK "is thinking"
-# define SLEEP "is sleeping"
-# define EAT "is eating"
-# define DIED "died"
+# define TRUE 1
+# define FALSE 0
+
+# define TAKE_FORK " has taken a fork"
+# define THINK " is thinking"
+# define SLEEP " is sleeping"
+# define EAT " is eating"
+# define DIED " died"
 
 typedef enum e_errors
 {
@@ -44,5 +47,7 @@ typedef enum e_errors
 # define ERR_U2 "[time_to_eat] [*optional: max_number_of_eat]\n"
 # define ERR_U3 "./philo 300 100 100    -> (max_number_of_eat is not given)\n"
 # define ERR_U4 "./philo 300 100 100 7  -> (max_number_of_eat is given)\n"
-
+# define ERR_THREAD "Threading error!"
 #endif
+
+//https://github.com/jdecorte-be/42-Philosophers/blob/master/src/philo.c

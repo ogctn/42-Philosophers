@@ -1,21 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libtf.c                                            :+:      :+:    :+:   */
+/*   libft.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ogcetin <ogcetin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 22:43:29 by ogcetin           #+#    #+#             */
-/*   Updated: 2023/10/23 02:01:01 by ogcetin          ###   ########.fr       */
+/*   Updated: 2023/10/23 11:43:34 by ogcetin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/philo.h"
-
-static int	is_space(char c)
-{
-	return ((c >= 9 && c <= 13) || c == ' ');
-}
 
 int	ft_atoi_positive(char *str)
 {
@@ -25,7 +20,7 @@ int	ft_atoi_positive(char *str)
 
 	i = 0;
 	result = 0;
-	while (is_space(str[i]) || str[i] == '+')
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ' || str[i] == '+')
 		i++;
 	while (str[i] != '\0')
 	{
