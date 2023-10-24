@@ -6,7 +6,7 @@
 /*   By: ogcetin <ogcetin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:12:37 by ogcetin           #+#    #+#             */
-/*   Updated: 2023/10/24 17:04:16 by ogcetin          ###   ########.fr       */
+/*   Updated: 2023/10/24 17:22:56 by ogcetin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,6 @@ int	main(int ac, char **av)
 	if (init_info(&info, ac, av))
 		return (2);
 	if (do_philos(&info))
-	{
-		printf("#\t\t%s\t\t#\n", ERR_THREAD);
 		return (before_exit(&info), 3);
-	}
 	return (before_exit(&info), 0);
 }

@@ -6,7 +6,7 @@
 /*   By: ogcetin <ogcetin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 21:55:01 by ogcetin           #+#    #+#             */
-/*   Updated: 2023/10/24 16:30:55 by ogcetin          ###   ########.fr       */
+/*   Updated: 2023/10/24 17:24:32 by ogcetin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ typedef enum e_errors
 # define ERR_U2 "[time_to_eat] [*optional: max_number_of_eat]\n"
 # define ERR_U3 "./philo 5 300 100 100    ->(max_number_of_eat is not given)\n"
 # define ERR_U4 "./philo 5 300 100 100 7  ->(max_number_of_eat is given)\n"
-# define ERR_THREAD "Threading error!"
+# define ERR_THREAD "THREAD error!"
+# define ERR_MALLOC "MALLOC error!"
 
 #endif
