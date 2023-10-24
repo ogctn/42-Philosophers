@@ -6,7 +6,7 @@
 /*   By: ogcetin <ogcetin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 09:32:50 by ogcetin           #+#    #+#             */
-/*   Updated: 2023/10/23 18:09:23 by ogcetin          ###   ########.fr       */
+/*   Updated: 2023/10/24 17:03:14 by ogcetin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ int	init_info(t_info *info, int ac, char **av)
 		return (1);
 	info->philo = malloc(sizeof(t_philo) * info->n_philo);
 	if (!info->philo)
-		return (-1);
+		return (printf("MALLOC ERROR\n"), -1);
 	pthread_mutex_init(&info->m_print, 0);
 	pthread_mutex_init(&info->m_stop, 0);
 	pthread_mutex_init(&info->m_eat, 0);
 	pthread_mutex_init(&info->m_dead, 0);
-	pthread_mutex_init(&info->m_set_check, 0);
+	pthread_mutex_init(&info->m_condition, 0);
 	info->t_die = ft_atoi_positive(av[2]);
 	info->t_eat = ft_atoi_positive(av[3]);
 	info->t_sleep = ft_atoi_positive(av[4]);

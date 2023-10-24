@@ -6,7 +6,7 @@
 /*   By: ogcetin <ogcetin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 10:30:58 by ogcetin           #+#    #+#             */
-/*   Updated: 2023/10/23 18:15:39 by ogcetin          ###   ########.fr       */
+/*   Updated: 2023/10/24 17:02:41 by ogcetin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ void	*check_death(void *a_philo)
 	ft_sleep_ms(philo->info->t_die + 1);
 	pthread_mutex_lock(&philo->info->m_eat);
 	pthread_mutex_lock(&philo->info->m_stop);
-	if (!set_check_dead(philo, 0)
+	if (!manage_death_condition(philo, 0)
 		&& get_time() - philo->last_eat >= philo->info->t_die)
 	{
 		print_stat(philo, DIED);
-		set_check_dead(philo, 1);
+		manage_death_condition(philo, 1);
 		pthread_mutex_unlock(&philo->info->m_eat);
 		pthread_mutex_unlock(&philo->info->m_stop);
 	}
@@ -74,7 +74,7 @@ void	*philo_life(void *a_philo)
 	philo = (t_philo *)a_philo;
 	if (philo->n % 2 == 0)
 		ft_sleep_ms(philo->info->t_eat / 10);
-	while (!set_check_dead(philo, 0))
+	while (!manage_death_condition(philo, 0))
 	{
 		pthread_create(&t, 0, &check_death, a_philo);
 		take_fork(philo);
@@ -85,7 +85,7 @@ void	*philo_life(void *a_philo)
 			if (++philo->info->philo_eat == philo->info->n_philo)
 			{
 				pthread_mutex_unlock(&philo->info->m_stop);
-				set_check_dead(philo, 2);
+				manage_death_condition(philo, 2);
 			}
 			pthread_mutex_unlock(&philo->info->m_stop);
 			return (0);

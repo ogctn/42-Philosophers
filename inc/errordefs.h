@@ -6,7 +6,7 @@
 /*   By: ogcetin <ogcetin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 21:55:01 by ogcetin           #+#    #+#             */
-/*   Updated: 2023/10/23 17:53:36 by ogcetin          ###   ########.fr       */
+/*   Updated: 2023/10/24 16:30:55 by ogcetin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,11 @@ typedef enum e_errors
 # define ERR_TOO_FEW "Too few arguments!"
 # define ERR_TOO_MANY "Too many arguments!"
 # define ERR_NEGATIVE "All arguments must be positive!"
-# define ERR_NO_OF_PH "Check {number_of_philos}, parameter is not a number!"
-# define ERR_DIE "Check {time_to_die}, parameter is not a number!"
-# define ERR_EAT "Check {time_to_eat}, parameter is not a number!"
-# define ERR_SLEEP "Check {time_to_sleep}, parameter is not a number!"
-# define ERR_MUST_EAT "Check {max_number_of_eat}, parameter is not a number!"
+# define ERR_NO_OF_PH "Check {number_of_philos}!"
+# define ERR_DIE "Check {time_to_die}!"
+# define ERR_EAT "Check {time_to_eat}!"
+# define ERR_SLEEP "Check {time_to_sleep}!"
+# define ERR_MUST_EAT "Check {max_number_of_eat}!"
 # define ERR_NOT_A_NUMBER "All arguments must be numeric and positive!"
 # define ERR_U0 "Usage:\n"
 # define ERR_U1 "./philo [number_of_philos] [time_to_die] [time_to_sleep] "

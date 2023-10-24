@@ -6,7 +6,7 @@
 /*   By: ogcetin <ogcetin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:09:11 by ogcetin           #+#    #+#             */
-/*   Updated: 2023/10/23 17:55:10 by ogcetin          ###   ########.fr       */
+/*   Updated: 2023/10/24 17:03:14 by ogcetin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ typedef struct s_info
 	pthread_mutex_t	m_stop;
 	pthread_mutex_t	m_eat;
 	pthread_mutex_t	m_dead;
-	pthread_mutex_t	m_set_check;
+	pthread_mutex_t	m_condition;
 }		t_info;
 
 int			ft_atoi_positive(char *str);
@@ -56,7 +56,7 @@ int			check_args(int ac, char **av);
 
 long long	get_time(void);
 void		ft_sleep_ms(int ms);
-int			set_check_dead(t_philo *philo, int n);
+int			manage_death_condition(t_philo *philo, int n);
 void		print_stat(t_philo *philo, char *str);
 
 int			init_info(t_info *info, int ac, char **av);

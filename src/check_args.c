@@ -6,7 +6,7 @@
 /*   By: ogcetin <ogcetin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 20:25:06 by ogcetin           #+#    #+#             */
-/*   Updated: 2023/10/23 17:53:42 by ogcetin          ###   ########.fr       */
+/*   Updated: 2023/10/24 16:31:30 by ogcetin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ static void	usage(int e)
 	if (e == philo_number)
 		printf("\t\t\t%s\n\t\t\t\t%s\n", ERR_NO_OF_PH, ERR_NOT_A_NUMBER);
 	if (e == die_is_not_number)
-		printf("\t\t\t%s\n\t\t\t\t%s\n", ERR_DIE, ERR_NOT_A_NUMBER);
+		printf("\t\t\t\t%s\n\t\t\t\t%s\n", ERR_DIE, ERR_NOT_A_NUMBER);
 	if (e == eat_is_not_number)
-		printf("\t\t\t%s\n\t\t\t\t%s\n", ERR_EAT, ERR_NOT_A_NUMBER);
+		printf("\t\t\t\t%s\n\t\t\t\t%s\n", ERR_EAT, ERR_NOT_A_NUMBER);
 	if (e == sleep_is_not_number)
-		printf("\t\t\t%s\n\t\t\t\t%s\n", ERR_SLEEP, ERR_NOT_A_NUMBER);
+		printf("\t\t\t\t%s\n\t\t\t\t%s\n", ERR_SLEEP, ERR_NOT_A_NUMBER);
 	if (e == must_eat_is_not_number)
-		printf("\t\t\t%s\n\t\t\t\t%s\n", ERR_MUST_EAT, ERR_NOT_A_NUMBER);
+		printf("\t\t\t\t%s\n\t\t\t\t%s\n", ERR_MUST_EAT, ERR_NOT_A_NUMBER);
 	if (e == negative_number)
 		printf("\t\t\t%s\n", ERR_NEGATIVE);
 	printf("---------------------------------------------------");
