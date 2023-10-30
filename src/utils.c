@@ -6,7 +6,7 @@
 /*   By: ogcetin <ogcetin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 10:33:44 by ogcetin           #+#    #+#             */
-/*   Updated: 2023/10/24 17:08:31 by ogcetin          ###   ########.fr       */
+/*   Updated: 2023/10/30 18:33:25 by ogcetin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void	print_stat(t_philo *philo, char *str)
 			printf("%lld %d %s\n",
 				get_time() - philo->info->t_start, philo->n, str);
 	}
-	pthread_mutex_unlock(&(philo->info->m_condition));
+	else
+		pthread_mutex_unlock(&(philo->info->m_condition));
 	pthread_mutex_unlock(&(philo->info->m_print));
 }

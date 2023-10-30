@@ -9,6 +9,7 @@
 		"__config": "c",
 		"time.h": "c",
 		"philo.h": "c",
-		"locale": "c"
+		"locale": "c",
+		"sstream": "c"
 	}
 }
