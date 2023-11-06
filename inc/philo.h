@@ -6,7 +6,7 @@
 /*   By: ogcetin <ogcetin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:09:11 by ogcetin           #+#    #+#             */
-/*   Updated: 2023/10/24 17:03:14 by ogcetin          ###   ########.fr       */
+/*   Updated: 2023/11/06 19:59:11 by ogcetin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_philo
 	long int		last_eat;
 	struct s_info	*info;
 	pthread_mutex_t	*fork_r;
-	pthread_mutex_t	fork_l;
+	pthread_mutex_t	*fork_l;
 }		t_philo;
 
 typedef struct s_info
@@ -48,20 +48,20 @@ typedef struct s_info
 	pthread_mutex_t	m_stop;
 	pthread_mutex_t	m_eat;
 	pthread_mutex_t	m_dead;
-	pthread_mutex_t	m_condition;
 }		t_info;
 
 int			ft_atoi_positive(char *str);
 int			check_args(int ac, char **av);
 
 long long	get_time(void);
-void		ft_sleep_ms(int ms);
-int			manage_death_condition(t_philo *philo, int n);
-void		print_stat(t_philo *philo, char *str);
+void		ft_sleep_ms(int ms, t_info *info);
+void		print_status(t_philo *philo, char *str);
 
 int			init_info(t_info *info, int ac, char **av);
-int			do_philos(t_info *info);
+int			init_philo(t_info *info);
 
 void		*philo_life(void *a_philo);
+void		clear_before_exit(t_info info);
+void	*check_death(void *p_info);
 
 #endif

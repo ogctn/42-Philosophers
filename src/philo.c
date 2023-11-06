@@ -6,39 +6,47 @@
 /*   By: ogcetin <ogcetin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:12:37 by ogcetin           #+#    #+#             */
-/*   Updated: 2023/10/24 17:22:56 by ogcetin          ###   ########.fr       */
+/*   Updated: 2023/11/06 20:24:11 by ogcetin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/philo.h"
 
-void	before_exit(t_info *info)
+void	clear_before_exit(t_info info)
 {
 	int	i;
 
 	i = 0;
-	while (i < info->n_philo)
+	while (i < info.n_philo)
 	{
-		pthread_mutex_destroy(&info->philo[i].fork_l);
-		pthread_mutex_destroy(info->philo[i].fork_r);
+		pthread_mutex_destroy(info.philo[i].fork_l);
 		i++;
 	}
-	pthread_mutex_destroy(&info->m_print);
-	pthread_mutex_destroy(&info->m_stop);
-	pthread_mutex_destroy(&info->m_eat);
-	pthread_mutex_destroy(&info->m_dead);
-	free(info->philo);
+	pthread_mutex_destroy(&info.m_print);
+	pthread_mutex_destroy(&info.m_stop);
+	pthread_mutex_destroy(&info.m_eat);
+	pthread_mutex_destroy(&info.m_dead);
+	free(info.philo);
 }
 
 int	main(int ac, char **av)
 {
 	t_info	info;
+	int i = 0;
 
 	if (check_args(ac, av))
 		return (1);
 	if (init_info(&info, ac, av))
 		return (2);
-	if (do_philos(&info))
-		return (before_exit(&info), 3);
-	return (before_exit(&info), 0);
+	if (init_philo(&info))
+		return (clear_before_exit(info), 3);
+	pthread_t monitor;
+	pthread_create(&monitor, 0, &check_death, &info);
+	while (i < info.n_philo)
+	{
+		pthread_join(info.philo[i].thread, 0);
+		i++;
+	}
+	pthread_join(monitor, 0);
+	return (clear_before_exit(info), 0);
 }
