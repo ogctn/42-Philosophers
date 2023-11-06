@@ -6,7 +6,7 @@
 /*   By: ogcetin <ogcetin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:09:11 by ogcetin           #+#    #+#             */
-/*   Updated: 2023/11/06 19:59:11 by ogcetin          ###   ########.fr       */
+/*   Updated: 2023/11/07 02:04:15 by ogcetin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ typedef struct s_info
 	int				stop;
 	long int		t_start;
 	t_philo			*philo;
+	pthread_mutex_t	*addr_forks;
 	pthread_mutex_t	m_print;
 	pthread_mutex_t	m_stop;
 	pthread_mutex_t	m_eat;

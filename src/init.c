@@ -6,7 +6,7 @@
 /*   By: ogcetin <ogcetin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 09:32:50 by ogcetin           #+#    #+#             */
-/*   Updated: 2023/11/06 20:59:09 by ogcetin          ###   ########.fr       */
+/*   Updated: 2023/11/07 02:04:25 by ogcetin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int	init_philo(t_info *info)
 	pthread_mutex_t	*forks;
 
 	forks = malloc(sizeof(pthread_mutex_t) * info->n_philo);
+	info->addr_forks = forks;
 	info->t_start = get_time();
 	i = -1;
 	while (++i < info->n_philo)
