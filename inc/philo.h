@@ -6,7 +6,7 @@
 /*   By: ogcetin <ogcetin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 19:09:11 by ogcetin           #+#    #+#             */
-/*   Updated: 2023/11/07 02:04:15 by ogcetin          ###   ########.fr       */
+/*   Updated: 2023/11/07 02:06:42 by ogcetin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,6 @@ int			init_philo(t_info *info);
 
 void		*philo_life(void *a_philo);
 void		clear_before_exit(t_info info);
-void	*check_death(void *p_info);
+void		*check_death(void *p_info);
 
 #endif

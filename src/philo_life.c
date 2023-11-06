@@ -6,41 +6,44 @@
 /*   By: ogcetin <ogcetin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 10:30:58 by ogcetin           #+#    #+#             */
-/*   Updated: 2023/11/06 21:06:19 by ogcetin          ###   ########.fr       */
+/*   Updated: 2023/11/07 02:35:14 by ogcetin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/philo.h"
 
+int	check_is_full_eat(t_info *info, int i)
+{
+	pthread_mutex_lock(&info->m_eat);
+	if (info->philo[i].m_count == info->n_eat)
+	{
+		pthread_mutex_unlock(&info->m_eat);
+		return (1);
+	}
+	pthread_mutex_unlock(&info->m_eat);
+	return (0);
+}
 void	*check_death(void *p_info)
 {
 	t_info	*info;
-
-	info = (t_info *) p_info;
+	int		i;
 	
-	t_philo *philos;
-
-	philos = info->philo;
-	int i = 0;
+	info = (t_info *)p_info;
+	i = 0;
 	while (1)
 	{
-		pthread_mutex_lock(&info->m_eat);
-		if (philos[i].m_count == info->n_eat)
-		{
-			pthread_mutex_unlock(&info->m_eat);
+		if (check_is_full_eat(info, i))
 			return (NULL);
-		}
-		if (get_time() - philos[i].last_eat > info->t_die)
+		if (get_time() - info->philo[i].last_eat > info->t_die)
 		{
-			pthread_mutex_unlock(&info->m_eat);
-			print_status(&philos[i], "died");
+			print_status(&info->philo[i], "died");
 			pthread_mutex_lock(&info->m_dead);
 			info->stop = 1;
 			i = 0;
 			while (i < info->n_philo)
 			{
-				pthread_mutex_unlock(philos[i].fork_l);
-				pthread_mutex_unlock(philos[i].fork_r);
+				pthread_mutex_unlock(info->philo[i].fork_l);
+				pthread_mutex_unlock(info->philo[i].fork_r);
 				i++;
 			}
 			pthread_mutex_unlock(&info->m_dead);
@@ -86,6 +89,8 @@ void	*philo_life(void *a_philo)
 	t_philo *philo;
 
 	philo = (t_philo *)a_philo;
+	if (philo->info->n_philo % 2 == 0)
+		usleep(100);
 	while (1)
 	{
 		pthread_mutex_lock(&philo->info->m_dead);
