@@ -6,7 +6,7 @@
 /*   By: ogcetin <ogcetin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 09:32:50 by ogcetin           #+#    #+#             */
-/*   Updated: 2023/11/07 02:27:18 by ogcetin          ###   ########.fr       */
+/*   Updated: 2023/11/07 03:41:43 by ogcetin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	init_info(t_info *info, int ac, char **av)
 
 int	init_philo(t_info *info)
 {
-	int	i;
+	int				i;
 	pthread_mutex_t	*forks;
 
 	forks = malloc(sizeof(pthread_mutex_t) * info->n_philo);

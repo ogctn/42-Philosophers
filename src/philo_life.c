@@ -6,7 +6,7 @@
 /*   By: ogcetin <ogcetin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 10:30:58 by ogcetin           #+#    #+#             */
-/*   Updated: 2023/11/07 03:39:08 by ogcetin          ###   ########.fr       */
+/*   Updated: 2023/11/07 03:42:19 by ogcetin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,7 @@ void	*check_death(void *p_info)
 	return (NULL);
 }
 
-
-int 	routine(t_philo *philo)
+int	routine(t_philo *philo)
 {
 	pthread_mutex_lock(philo->fork_l);
 	print_status(philo, "has taken a fork");
@@ -80,12 +79,12 @@ int 	routine(t_philo *philo)
 	pthread_mutex_unlock(philo->fork_r);
 	print_status(philo, "is sleeping");
 	ft_sleep_ms(philo->info->t_sleep, philo->info);
-	return 0;
+	return (0);
 }
 
 void	*philo_life(void *a_philo)
 {
-	t_philo *philo;
+	t_philo	*philo;
 
 	philo = (t_philo *)a_philo;
 	while (1)
