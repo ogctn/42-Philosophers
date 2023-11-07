@@ -6,7 +6,7 @@
 /*   By: ogcetin <ogcetin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 20:25:06 by ogcetin           #+#    #+#             */
-/*   Updated: 2023/10/23 12:36:34 by ogcetin          ###   ########.fr       */
+/*   Updated: 2023/10/24 16:31:30 by ogcetin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,16 @@ static void	usage(int e)
 		printf("\t\t\t%s\n\t\t\t\t%s\n", ERR_ARG_NUMBER, ERR_TOO_FEW);
 	if (e == many_arguments)
 		printf("\t\t\t%s\n\t\t\t\t%s\n", ERR_ARG_NUMBER, ERR_TOO_MANY);
+	if (e == philo_number)
+		printf("\t\t\t%s\n\t\t\t\t%s\n", ERR_NO_OF_PH, ERR_NOT_A_NUMBER);
 	if (e == die_is_not_number)
-		printf("\t\t\t%s\n\t\t\t\t%s\n", ERR_DIE, ERR_NOT_A_NUMBER);
+		printf("\t\t\t\t%s\n\t\t\t\t%s\n", ERR_DIE, ERR_NOT_A_NUMBER);
 	if (e == eat_is_not_number)
-		printf("\t\t\t%s\n\t\t\t\t%s\n", ERR_EAT, ERR_NOT_A_NUMBER);
+		printf("\t\t\t\t%s\n\t\t\t\t%s\n", ERR_EAT, ERR_NOT_A_NUMBER);
 	if (e == sleep_is_not_number)
-		printf("\t\t\t%s\n\t\t\t\t%s\n", ERR_SLEEP, ERR_NOT_A_NUMBER);
+		printf("\t\t\t\t%s\n\t\t\t\t%s\n", ERR_SLEEP, ERR_NOT_A_NUMBER);
 	if (e == must_eat_is_not_number)
-		printf("\t\t\t%s\n\t\t\t\t%s\n", ERR_MUST_EAT, ERR_NOT_A_NUMBER);
+		printf("\t\t\t\t%s\n\t\t\t\t%s\n", ERR_MUST_EAT, ERR_NOT_A_NUMBER);
 	if (e == negative_number)
 		printf("\t\t\t%s\n", ERR_NEGATIVE);
 	printf("---------------------------------------------------");
@@ -86,10 +88,12 @@ int	check_args(int ac, char **av)
 	if (ac > 6)
 		return (usage(many_arguments), 1);
 	if (!is_only_digits(av[1]))
-		return (usage(die_is_not_number), 1);
+		return (usage(philo_number), 1);
 	if (!is_only_digits(av[2]))
-		return (usage(eat_is_not_number), 1);
+		return (usage(die_is_not_number), 1);
 	if (!is_only_digits(av[3]))
+		return (usage(eat_is_not_number), 1);
+	if (!is_only_digits(av[4]))
 		return (usage(sleep_is_not_number), 1);
 	if (ac == 6 && !is_only_digits(av[5]))
 		return (usage(must_eat_is_not_number), 1);

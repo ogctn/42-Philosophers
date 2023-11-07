@@ -6,7 +6,7 @@
 /*   By: ogcetin <ogcetin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 22:43:29 by ogcetin           #+#    #+#             */
-/*   Updated: 2023/10/23 11:43:34 by ogcetin          ###   ########.fr       */
+/*   Updated: 2023/10/23 13:55:21 by ogcetin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int	ft_atoi_positive(char *str)
 {
 	int			i;
-	int			sign;
 	long long	result;
 
 	i = 0;
