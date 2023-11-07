@@ -6,21 +6,12 @@
 /*   By: ogcetin <ogcetin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 21:55:01 by ogcetin           #+#    #+#             */
-/*   Updated: 2023/10/24 17:24:32 by ogcetin          ###   ########.fr       */
+/*   Updated: 2023/11/07 03:36:20 by ogcetin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ERRORDEFS_H
 # define ERRORDEFS_H
-
-# define TRUE 1
-# define FALSE 0
-
-# define TAKE_FORK " has taken a fork"
-# define THINK " is thinking"
-# define SLEEP " is sleeping"
-# define EAT " is eating"
-# define DIED " died"
 
 typedef enum e_errors
 {
